@@ -118,62 +118,117 @@ nav ul li a:hover::after{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
-    font-weight: 500;
+    font-weight: 400;
+    width: 100%;
+    height: 75vh;
+    
     p {
         margin-top: 20px;
         color: #ffffff;
-        font-weight: 450;
+        font-size: 20px;
+    }
+    h2 {
+        margin-top: 15px;
+        font-size: 30px;
+        font-weight: 650;
     }
     .sketching-pic{
         width: 100%;
-        height: 140px;
+        height: 35vh;
         border-radius: 15px;
         object-fit: cover;
         margin-bottom: 10px;
     }
     .photoshop-pic{
         width: 100%;
-        height: 140px;
+        height: 35vh;
         border-radius: 15px;
         object-fit: cover;
+        object-position: 10%;
         margin-bottom: 10px;
     }
     .illustrator-pic{
         width: 100%;
-        height: 140px;
+        height: 35vh;
         border-radius: 15px;
         object-fit: cover;
         margin-bottom: 10px;
     }
+    
 }
 
 .hobby-list div{
-    background: #444444;
+    background: #141414;
     padding: 40px;
     border-radius: 20px;
-    transition: background 0.5s, transform 0.5s;
+    transition: background 0.5s, transform 0.5s, box-shadow 0.5s;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .hobby-list div:hover{
-    background-color: #616161;
     transform: translateY(-10px);
+    box-shadow: 0 0 35px #ffe710;
 }
 
 #favorites{
-    padding: 50px 0;
+    padding: 30px 0;
 }
-.favorite-list{
+
+.favorite-list {
     display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(250px, 3fr 3fr 3fr 3fr));
-    grid-gap: 40px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+    grid-row-gap: 40px;  /* Spacing between grid items */
     margin-top: 50px;
+    place-items: center;
 }
 
-
-.favorite-list div{
-    background: #444444;
-    padding: 40px;
+.fave{
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fave img{
+    width: 75vh;
+    height: 35vh;
+    border-radius: 20px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 15%, rgba(0, 0, 0, 0.664) 95%);
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s ease;
+}
+
+.layer h3{
+    font-weight: 650;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: #ffffff;
+}
+
+.fave:hover img{
+    transform: scale(1.2);
+}
+
+.fave:hover .layer{
+    height: 100%;
 }
 
 #contact{
